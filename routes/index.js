@@ -20,4 +20,11 @@ router.get('/', (req, res) => {
       res.json(req.params);
     });
 
+router.get('/pug', (req, res) => {
+  res.render('Home');
+  //به پسوند پاگ نیازی نداره
+  //قبلا توی کانفیگ جاش مشخص شده
+  //با رندر میتونیم یک فایل رو رندر کنیم
+});
+
 module.exports = router;
