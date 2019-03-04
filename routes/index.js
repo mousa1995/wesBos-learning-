@@ -21,7 +21,10 @@ router.get('/', (req, res) => {
     });
 
 router.get('/pug', (req, res) => {
-  res.render('Home');
+  res.render('Home', { 
+    name: 'dog',
+    dog: 'snickers'
+   });
   //به پسوند پاگ نیازی نداره
   //قبلا توی کانفیگ جاش مشخص شده
   //با رندر میتونیم یک فایل رو رندر کنیم
