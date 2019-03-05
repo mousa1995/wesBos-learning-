@@ -14,6 +14,7 @@ html
               a.nav__link.nav__link--logo(href="/")
                 != h.icon('logo')
             each item in h.menu
+                //- ایچ بالا برای لوپ کردن روی چیزی به کار گرفته میشه
               li.nav__item
                 a.nav__link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
                   != h.icon(item.icon)
