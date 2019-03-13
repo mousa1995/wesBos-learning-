@@ -111,4 +111,11 @@ if (app.get('env') === 'development') {
 app.use(errorHandlers.productionErrors);
 
 // done! we export it so we can start the site in start.js
+//بطور کلی توی این فایل اون بالا یه ریکوست قرار میگیره و فیلتر میشه تا زمانی که به روت میرسه
+//و نقطه خروچ ما همون روت هست
+//ولی اگه روت مورد نظر پیدا نشد ۴۰۴ نشون میدیم یا ارور رو با توچه به نسخه توسعه یا نسخه ارایه بودن درست میکنیم
+//توی نقطه خروج رسیپانس میفرستیم و تموم
+
+
+
 module.exports = app;
