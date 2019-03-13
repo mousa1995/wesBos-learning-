@@ -18,9 +18,13 @@ exports.catchErrors = (fn) => {
   If we hit a route that is not found, we mark it as 404 and pass it along to the next error handler to display
 */
 exports.notFound = (req, res, next) => {
+  //این جا یه ارور درست میکنیم
   const err = new Error('Not Found');
+  //استاتوس رو چهارصد و چهار میکنیم
   err.status = 404;
+  //ولی نکته این جاست زمانی که هر چیزی برای نکست رد کنیم فرض میکنه ارور است
   next(err);
+  //!دوباره میگم اگه چیزی برای نکست رد کنیم فکر میکنه که ارور است
 };
 
 /*
