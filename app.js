@@ -36,6 +36,7 @@ app.use(expressValidator());
 
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser());
+//اکسپرس بطور عادی کاری با کوکی نداره اگه میخوای استفاده کنی باس اضافه کنی
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
@@ -46,6 +47,9 @@ app.use(session({
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+//سشن میاد اطلاعاتی رو که از دیکوست تا ریکوست هست و جابه جا میشه رو کنترل میکنه
+//ما از سشن استفاده میکنیم تا طرف لوگین بمونه
+
 
 // // Passport JS is what we use to handle our logins
 app.use(passport.initialize());
@@ -85,6 +89,10 @@ app.use((req, res, next) => {
 });
 
 // After allllll that above middleware, we finally handle our own routes!
+//این جا میگیم بهد اسلش هر چی اومد از فایل روت ها استفاده کن که توی اون بطور مفصل گفته چی به کجا وصله
+//فقط نمیدونم یوز مستقیما از کجا میفهمه که این اسلش کدوم اسلش است؟
+//رفتن سرچ کردم این یوزی که بیاد و مستقیما یه استرینگ بگیره میتونه ساب دایرکتوری برامون درست کنه
+//خب در واقع این جا کلا برای خودمون یه دایرکتوری داریم ریشه هست
 app.use('/', routes);
 
 // If that above routes didnt work, we 404 them and forward to error handler
