@@ -26,6 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+///دارخ تفاوت ۲ تا چیز رو میگه 
+//گلوبال و غیر گلوبال میدلور ها
+//گلوبال ها اونهایی هستند که توی این فایل با یوز اومدند و روی تک تک ریکوست ها هستند
+//اون هایی هم که مثلا توی استور کنترلر میان و یه چیزی رو کنترل میکنند مثلا ایا برای ورود به این صفحه لوگین کرده و فقط برای اون صفحه استفاده میشن 
 
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
 app.use(expressValidator());
