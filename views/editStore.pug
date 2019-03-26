@@ -1,6 +1,9 @@
 block layout
 
+include mixins/_storeForm
+
 block content
  .inner
 	//- h2= title دلیل این که این کار میکنه اینه که تایتل رو توی لوکالس گذاشتیم و میتونه ازش استفاده کنه
   //- h2 ${title} این یه راهشه 
+	+storeForm(name: 'tim hornos')
