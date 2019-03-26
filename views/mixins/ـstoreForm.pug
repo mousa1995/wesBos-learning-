@@ -1,4 +1,19 @@
 //-  یه ابجکت خالی میسازیم که اگه چیزی رد نشد مشکلی پیش نیاد
-mixin storeForm(store = {})
+//- mixin storeForm(store = {})
  p it works! #{store.name}
 //- نام رو براش در کردیم و نشون داد
+mixin storeForm(store = {})
+ form(action="/add" method="POST" enctype="multipart/form-data" class="card")
+  label(for="name") name
+  input(type="text" name="name")
+  label(for="description") description
+  textarea(name="description")
+   - const choices = ['Wifi', 'Open late', 'Family friendly', 'Vegeterian', 'Licenced']
+   ul.tags
+    each choice in choices 
+     .tag.tag__choice
+      input(type="checkbox" id=choice value=choice name="tags")
+      label(for=choice) #{choice}
+  input(type="submit", value="submit" class="button")
+   //- توی خط بالا قبل کانست دشی که میبینیم یعنی داریم جاوااسکریپت مینویسیم
+//-   این ها با پایگاه داده ارتباط دارند و نام و ذسکریپشن برای پایگاه داده میرن
