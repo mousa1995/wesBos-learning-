@@ -3,11 +3,22 @@ mongoose.Promise = global.Promise;
 //زمانی که میخواهیم با پایگاه داده ارتباط برقرار کنیم باید صبر کنیم چون بصورت اسینکرونس نیست
 //میتوینم از لایبرری های اکسترنال استفاده کنیم و میتونیم از چیز های پیش فرض استفاده کنیم
 //دلیل این که از پرامیس گلوبال استفاده میکنیم اینه که میخوایم از اسینک اویست استفاده کنیم 
-const slugs = require('slugs');
+const slug = require('slugs');
 //اسلاگ چیزی است که برامون میومد و یو ار ال منحصر به فرد درست میکرد
 //مثلا یک به دو و دو به سه تبدیل میشد
 const storeSchema = new mongoose.Schema({
-
+    name: {
+        type: String,
+        trim: true,
+        // required: true اگه این جوری بگیم اروری که نشون کار بر میده خیلی قشنگ نیست و ارور مونگودیبی است
+        required: 'Please Enter A store name!'
+    },
+    slug: String,
+    description: {
+        type: String,
+        trim: true
+    },
+    tags: [String]
 });
 
 //قبلا از اکسپورتس دات یه فانکشن استفاده میکردیم
