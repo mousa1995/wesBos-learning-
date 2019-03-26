@@ -33,5 +33,6 @@ router.get('/', storeController.homePage);
   //قبلا توی کانفیگ جاش مشخص شده
   //با رندر میتونیم یک فایل رو رندر کنیم
 // });
+router.get('/add', storeController.addStore);
 
 module.exports = router;

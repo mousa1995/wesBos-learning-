@@ -36,6 +36,7 @@ storeSchema.pre('save', function(next){
   }
   this.slug = slug(this.name);
   next();
+  //TODO make more resilients so slugs are unique
 });
 //کد بالا میاد و نمیگذاره سیو بشه تا زمانی که کد داخل این جا انجام شده باشه
 //ما اومیدم و از کتابخانه اسلاگ استفاده کردیم و نام را در ان رد کردیم و بر اساس ان نام
