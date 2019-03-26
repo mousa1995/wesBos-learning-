@@ -34,5 +34,6 @@ router.get('/', storeController.homePage);
   //با رندر میتونیم یک فایل رو رندر کنیم
 // });
 router.get('/add', storeController.addStore);
+router.post('/add', storeController.createStore);
 
 module.exports = router;
