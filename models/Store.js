@@ -6,3 +6,5 @@ mongoose.Promise = global.Promise;
 const slugs = require('slugs');
 //اسلاگ چیزی است که برامون میومد و یو ار ال منحصر به فرد درست میکرد
 //مثلا یک به دو و دو به سه تبدیل میشد
+const storeSchema = mongoose.Schema
+//غلط بالا چیه؟
