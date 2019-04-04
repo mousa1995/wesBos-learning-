@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const storeController = require('../controllers/storeController');
+const { catchErrors } = require('../handlers/errorHandlers');
+
+
+//این فایل زی همونی هست که راه یابی میکنه و اگه کامیت قبلو خونده باشی تموم فانکنای این جا بازرسی میشن
+//کچ ارور بازرسمونه
 
 // Do work here
-router.get('/', storeController.homePage);
+router.get('/', catchErrors(storeController.homePage));
   // (req, res) => {
   // res.send('Hey! It works!');
   // const asd = { name: 'adlksa', age: 786, bool: true }
@@ -33,7 +38,7 @@ router.get('/', storeController.homePage);
   //قبلا توی کانفیگ جاش مشخص شده
   //با رندر میتونیم یک فایل رو رندر کنیم
 // });
-router.get('/add', storeController.addStore);
-router.post('/add', storeController.createStore);
+router.get('/add', catchErrors(storeController.addStore));
+router.post('/add', catchErrors(storeController.createStore));
 
 module.exports = router;

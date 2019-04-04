@@ -37,6 +37,8 @@ exports.createStore = async (req, res) => { //پوستی که به ادد میا
   const Store = new Store(req.body);
   await Store.save();
   console.log('Store Created');
+  req.flash('warning', 'in yeki matne payame');
+  res.redirect('/');
   //خب ساختار انی کد برام نا اشناس
   //الان این کدی که ساختیمش فک میکنم یه ابجکته چون استور یک ابجکت میسازه نهایتا
   //با یک ابجکت سر و کار داریم پس یک ابجکت نو میسازیم و نهایتا اوکی میشه هر بار که این فانکشن 
