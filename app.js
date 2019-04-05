@@ -40,6 +40,8 @@ app.use(cookieParser());
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
+//این سیشن ها یی که ساتفاده میکنیم کارشون اینه که باید بننن داده رو از یک
+//ریکوست به ریکوست بعدی بفرستند و در واقع یه چیزی هستند مثل استیت
 app.use(session({
   secret: process.env.SECRET,
   key: process.env.KEY,
@@ -98,6 +100,10 @@ app.use((req, res, next) => {
   //توی ریکوسن بعدی هم بمونه خیلی ساده میگه که من با سشن کار میکنم و منو حتما ریدایرکت کنین و خودمو نشون میدم
   //پس الان میفهمم که نمیدونم سشن دقیقا چیه و چرا تا ریکوست بعدی میمونه 
   //و در ضمن نمیدونم دقیقا چه اتفاقاتی میفته توی ریکوست تا رسپانس
+
+  //الان توی ادامه فیلم چند تا نکته جدید گفت یکی این که این که روی لوکالس گذاشتیم به همون علت است 
+  //که برای پاگ قبلی بود میخواد اون جا قابل دسترسی باشه 
+  //تا بتونه به یوزر نشون بده و استایلش بده
   res.locals.user = req.user || null;
   res.locals.currentPath = req.path;
   next();
