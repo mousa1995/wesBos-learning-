@@ -34,8 +34,9 @@ exports.createStore = async (req, res) => { //پوستی که به ادد میا
   //چه جایی این ویژگی ها رو داره؟ خب معلومه چیزی که از طرف کار بر میاد 
   //پس ما باید بادی رو جوری تنظیم کنه تموم اینها رو داشته باشه
   //روش ساختنش رو نمیدونم
-  const store = new Store(req.body);
-  await store.save();
+  const store = await (new Store(req.body)).save();
+  //این کد اسلاگ رو داره چون اول استور جدید رو میسازه بعدش صبر میکنه تا 
+  //ذخیره بشه در طی فرایند ذخیره شدن اسلاگ اضافه میشه بعد همشو به استور نسبت میده
   console.log('Store Created');
   req.flash('warning', 'in yeki matne payame');
   res.redirect(`/store/${store.slug}`);
