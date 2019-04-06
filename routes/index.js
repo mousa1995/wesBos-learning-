@@ -9,6 +9,7 @@ const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
 router.get('/', catchErrors(storeController.homePage));
+router.get('/stores', catchErrors(storeController.getStores))
   // (req, res) => {
   // res.send('Hey! It works!');
   // const asd = { name: 'adlksa', age: 786, bool: true }
